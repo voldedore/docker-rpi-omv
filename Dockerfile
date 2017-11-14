@@ -8,7 +8,7 @@ RUN [ "cross-build-start" ]
 
 RUN apt-get update
 
-RUN apt-get --force-yes install wget
+RUN apt-get install --force-yes wget
 RUN apt-get install dialog
 RUN apt-get install apt-utils
 
