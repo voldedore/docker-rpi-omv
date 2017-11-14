@@ -9,7 +9,9 @@ RUN echo "deb http://mirrors.vinahost.vn/raspbian/raspbian jessie main contrib n
 
 RUN apt-get update
 
-RUN apt-get install wget dialog apt-utils
+RUN apt-get install wget
+RUN apt-get install dialog
+RUN apt-get install apt-utils
 
 RUN wget -O - http://packages.openmediavault.org/public/archive.key | apt-key add -
 
@@ -21,6 +23,6 @@ RUN apt-get install perl libjs-extjs6 php5-fpm libpam-modules php5-cgi php5-cli 
 
 RUN omv-initsystem
 
-RUN [ "cross-build-end" ]  
+RUN [ "cross-build-end" ]
 
 CMD ["/bin/sh"]
