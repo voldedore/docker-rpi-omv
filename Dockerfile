@@ -4,15 +4,17 @@ LABEL maintainer="voldedore"
 
 RUN [ "cross-build-start" ]
 
-RUN echo "deb http://packages.openmediavault.org/public erasmus main" | sudo tee -a /etc/apt/sources.list.d/openmediavault.list
-RUN echo "deb http://mirrors.vinahost.vn/raspbian/raspbian jessie main contrib non-free rpi firmware" > /etc/apt/sources.list
+#RUN echo "deb http://mirrors.vinahost.vn/raspbian/raspbian jessie main contrib non-free rpi firmware" > /etc/apt/sources.list
 
 RUN apt-get update
 
-RUN apt-get install wget
+RUN apt-get --force-yes install wget
 RUN apt-get install dialog
 RUN apt-get install apt-utils
 
+
+
+RUN echo "deb http://packages.openmediavault.org/public erasmus main" | sudo tee -a /etc/apt/sources.list.d/openmediavault.list
 RUN wget -O - http://packages.openmediavault.org/public/archive.key | apt-key add -
 
 RUN apt-get install openmediavault-keyring postfix
