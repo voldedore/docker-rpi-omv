@@ -2,6 +2,8 @@ FROM resin/armv7hf-debian
 
 LABEL maintainer="voldedore"
 
+RUN [ "cross-build-start" ]
+
 RUN echo "deb http://packages.openmediavault.org/public erasmus main" | sudo tee -a /etc/apt/sources.list.d/openmediavault.list
 RUN echo "deb http://mirrors.vinahost.vn/raspbian/raspbian jessie main contrib non-free rpi firmware" > /etc/apt/sources.list
 
@@ -18,5 +20,7 @@ RUN apt-get install perl libjs-extjs6 php5-fpm libpam-modules php5-cgi php5-cli 
 
 
 RUN omv-initsystem
+
+RUN [ "cross-build-end" ]  
 
 CMD ["/bin/sh"]
