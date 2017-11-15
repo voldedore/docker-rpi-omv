@@ -1,14 +1,14 @@
-FROM resin/armv7hf-debian
+FROM resin/rpi-raspbian
 
 LABEL maintainer="voldedore"
 
-RUN [ "cross-build-start" ]
+#RUN [ "cross-build-start" ]
 
-#RUN echo "deb http://mirrors.vinahost.vn/raspbian/raspbian jessie main contrib non-free rpi firmware" > /etc/apt/sources.list
+RUN echo "deb http://mirrors.vinahost.vn/raspbian/raspbian jessie main contrib non-free rpi firmware" > /etc/apt/sources.list
 
 RUN apt-get update
 
-RUN apt-get install --force-yes wget
+RUN apt-get install wget
 RUN apt-get install dialog
 RUN apt-get install apt-utils
 
@@ -19,7 +19,7 @@ RUN wget -O - http://packages.openmediavault.org/public/archive.key | apt-key ad
 
 RUN apt-get install openmediavault-keyring
 RUN apt-get install postfix
-RUN apt-get -f install php-apc
+RUN apt-get install php-apc
 RUN apt-get install perl
 RUN apt-get install libjs-extjs6
 RUN apt-get install php5-fpm
@@ -123,6 +123,6 @@ RUN apt-get install init-system-helpers
 
 RUN omv-initsystem
 
-RUN [ "cross-build-end" ]
+#RUN [ "cross-build-end" ]
 
 CMD ["/bin/sh"]
