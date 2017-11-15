@@ -8,9 +8,8 @@ RUN echo "deb http://mirrors.vinahost.vn/raspbian/raspbian jessie main contrib n
 
 RUN apt-get update
 
-RUN apt-get install wget
-RUN apt-get install dialog
-RUN apt-get install apt-utils
+
+RUN apt-get install apt-utils wget dialog
 
 
 
