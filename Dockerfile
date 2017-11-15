@@ -20,7 +20,7 @@ RUN apt-get install openmediavault
 
 RUN wget http://omv-extras.org/debian/pool/main/o/openmediavault-omvextrasorg/openmediavault-omvextrasorg_3.3.3_all.deb
 RUN dpkg -i openmediavault-omvextrasorg_3.3.3_all.deb
-RUN omv-initsystem
+#RUN omv-initsystem
 
 CMD ["/bin/sh"]
 #CMD ["omv-initsystem"]
