@@ -26,8 +26,9 @@ RUN apt-get install openmediavault
 #RUN echo $(apt-cache depends openmediavault | grep Depends | sed "s/.*ends:\ //" | tr '\n' ' ')
 
 
-RUN omv-initsystem
+#RUN omv-initsystem
 
 #RUN [ "cross-build-end" ]
 
 CMD ["/bin/sh"]
+#CMD ["omv-initsystem"]
