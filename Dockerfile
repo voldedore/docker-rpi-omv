@@ -2,16 +2,11 @@ FROM resin/rpi-raspbian
 
 LABEL maintainer="voldedore"
 
-#RUN [ "cross-build-start" ]
-
 RUN echo "deb http://mirrors.vinahost.vn/raspbian/raspbian jessie main contrib non-free rpi firmware" > /etc/apt/sources.list
 
 RUN apt-get update
 
-
 RUN apt-get install apt-utils wget dialog
-
-
 
 RUN echo "deb http://packages.openmediavault.org/public erasmus main" | sudo tee -a /etc/apt/sources.list.d/openmediavault.list
 RUN wget -O - http://packages.openmediavault.org/public/archive.key | apt-key add -
@@ -23,12 +18,9 @@ RUN apt-get install openmediavault-keyring postfix php-apc perl libjs-extjs6 php
 RUN echo "resolvconf resolvconf/linkify-resolvconf boolean false" | debconf-set-selections
 RUN apt-get install openmediavault
 
-#RUN echo $(apt-cache depends openmediavault | grep Depends | sed "s/.*ends:\ //" | tr '\n' ' ')
-
-
-#RUN omv-initsystem
-
-#RUN [ "cross-build-end" ]
+RUN wget http://omv-extras.org/debian/pool/main/o/openmediavault-omvextrasorg/openmediavault-omvextrasorg_3.3.3_all.deb
+RUN dpkg -i openmediavault-omvextrasorg_3.3.3_all.deb
+RUN omv-initsystem
 
 CMD ["/bin/sh"]
 #CMD ["omv-initsystem"]
