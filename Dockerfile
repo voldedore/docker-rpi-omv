@@ -16,6 +16,8 @@ RUN apt-get install apt-utils wget dialog
 RUN echo "deb http://packages.openmediavault.org/public erasmus main" | sudo tee -a /etc/apt/sources.list.d/openmediavault.list
 RUN wget -O - http://packages.openmediavault.org/public/archive.key | apt-key add -
 
+RUN apt-get update
+
 RUN apt-get install openmediavault-keyring
 RUN apt-get install postfix
 RUN apt-get install php-apc
