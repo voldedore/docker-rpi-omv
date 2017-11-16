@@ -34,21 +34,11 @@ Type = ext4 \n\
 Options = rw,relatime,data=ordered \n\
 \n\
 [Install] \n\
-WantedBy = multi-user.target' 
+WantedBy = multi-user.target' > /opt/mnt-storage.mount
 
-RUN echo '[Unit] \n\
-Description = External SD Card \n\
-\n\
-[Mount] \n\
-What = LABEL=$STORAGE_LABEL \n\
-Where = /mnt/storage/$STORAGE_LABEL \n\
-Type = ext4 \n\
-Options = rw,relatime,data=ordered \n\
-\n\
-[Install] \n\
-WantedBy = multi-user.target' > mnt-storage.mount
+RUN cat /opt/mnt-storage.mount
 
-RUN systemctl enable mnt-storage.mount
+RUN systemctl enable /opt/mnt-storage.mount
 
 CMD ["/bin/sh"]
 #CMD ["omv-initsystem"]
