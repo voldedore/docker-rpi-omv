@@ -26,7 +26,7 @@ VOLUME ["/data"]
 
 #RUN cat /data/mnt-storage.mount
 
-CMD cp /data/mnt-storage.mount /etc/systemd/system/ && systemctl enable mnt-storage.mount
+CMD echo "LABEL=VTVINH /mnt/storage vfat rw,relatime,discard,data=ordered 0 2" >> /etc/fstab && mkdir -p /mnt/storage && mount /mnt/storage
 
 #CMD ["/bin/bash"]
 #CMD ["omv-initsystem"]
