@@ -26,7 +26,7 @@ VOLUME ["/data"]
 
 RUN cat /data/mnt-storage.mount
 
-#ENTRYPOINT systemctl enable /data/mnt-storage.mount
+ENTRYPOINT cat /data/mnt-storage.mount
 
 CMD ["/bin/bash"]
 #CMD ["omv-initsystem"]
