@@ -24,9 +24,10 @@ RUN dpkg -i openmediavault-omvextrasorg_3.3.3_all.deb
 
 VOLUME ["/data"]
 
-#RUN cat /data/mnt-storage.mount
+COPY mount.sh /provision/mount.sh
+RUN chmod +x /provision/mount.sh
 
-CMD echo "LABEL=`cat /data/STORAGE_LABEL` /mnt/storage vfat rw,relatime,discard,data=ordered 0 2" >> /etc/fstab && mkdir -p /mnt/storage && mount -L `cat /data/STORAGE_LABEL` /mnt/storage
+CMD /provision/mount.sh
 
 #CMD ["/bin/bash"]
 #CMD ["omv-initsystem"]
