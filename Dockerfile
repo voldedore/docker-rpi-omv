@@ -24,10 +24,6 @@ RUN dpkg -i openmediavault-omvextrasorg_3.3.3_all.deb
 
 VOLUME ["/data"]
 
-RUN ls /data
-
-RUN taolao_mialao
-
 #RUN systemctl enable /opt/mnt-storage.mount
 
 CMD ["/bin/sh"]
