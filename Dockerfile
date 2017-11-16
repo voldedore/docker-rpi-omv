@@ -26,7 +26,7 @@ VOLUME ["/data"]
 
 #RUN cat /data/mnt-storage.mount
 
-CMD echo "LABEL=VTVINH /mnt/storage vfat rw,relatime,discard,data=ordered 0 2" >> /etc/fstab
+CMD echo "LABEL=`cat /data/STORAGE_LABEL` /mnt/storage vfat rw,relatime,discard,data=ordered 0 2" >> /etc/fstab && mkdir -p /mnt/storage && mount -L `cat /data/STORAGE_LABEL` /mnt/storage
 
 #CMD ["/bin/bash"]
 #CMD ["omv-initsystem"]
