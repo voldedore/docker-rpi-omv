@@ -22,23 +22,13 @@ RUN wget http://omv-extras.org/debian/pool/main/o/openmediavault-omvextrasorg/op
 RUN dpkg -i openmediavault-omvextrasorg_3.3.3_all.deb
 #RUN omv-initsystem
 
-ARG STORAGE_LABEL=VTVINH
+VOLUME ["/data"]
 
-RUN echo '[Unit] \n\
-Description = External SD Card \n\
-\n\
-[Mount] \n\
-What = LABEL=$STORAGE_LABEL \n\
-Where = /mnt/storage/$STORAGE_LABEL \n\
-Type = ext4 \n\
-Options = rw,relatime,data=ordered \n\
-\n\
-[Install] \n\
-WantedBy = multi-user.target' > /opt/mnt-storage.mount
+RUN ls /data
 
-RUN cat /opt/mnt-storage.mount
+RUN taolao_mialao
 
-RUN systemctl enable /opt/mnt-storage.mount
+#RUN systemctl enable /opt/mnt-storage.mount
 
 CMD ["/bin/sh"]
 #CMD ["omv-initsystem"]
