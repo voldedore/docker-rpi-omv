@@ -24,7 +24,7 @@ RUN dpkg -i openmediavault-omvextrasorg_3.3.3_all.deb
 
 VOLUME ["/data"]
 
-RUN cat /data/mnt-storage.mount
+#RUN cat /data/mnt-storage.mount
 
 ENTRYPOINT cat /data/mnt-storage.mount
 
