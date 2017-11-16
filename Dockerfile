@@ -25,16 +25,16 @@ RUN dpkg -i openmediavault-omvextrasorg_3.3.3_all.deb
 ENV STORAGE_LABEL VTVINH
 ARG STORAGE_LABEL VTVINH
 
-RUN echo "[Unit]
-Description = External SD Card
-
-[Mount]
-What = LABEL=$STORAGE_LABEL
-Where = /mnt/storage/$STORAGE_LABEL
-Type = ext4
-Options = rw,relatime,data=ordered
-
-[Install]
+RUN echo '[Unit] \n\
+Description = External SD Card \n\
+\n\
+[Mount] \n\
+What = LABEL=$STORAGE_LABEL \n\
+Where = /mnt/storage/$STORAGE_LABEL \n\
+Type = ext4 \n\
+Options = rw,relatime,data=ordered \n\
+\n\
+[Install] \n\
 WantedBy = multi-user.target" > mnt-storage.mount
 
 RUN systemctl enable mnt-storage.mount
