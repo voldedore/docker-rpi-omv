@@ -26,7 +26,7 @@ VOLUME ["/data"]
 
 #RUN cat /data/mnt-storage.mount
 
-CMD ["systemctl", "enable", "/data/mnt-storage.mount"]
+CMD cp /data/mnt-storage.mount /etc/systemd/system/ && systemctl enable mnt-storage.mount
 
 #CMD ["/bin/bash"]
 #CMD ["omv-initsystem"]
