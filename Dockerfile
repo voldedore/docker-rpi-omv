@@ -24,7 +24,9 @@ RUN dpkg -i openmediavault-omvextrasorg_3.3.3_all.deb
 
 VOLUME ["/data"]
 
-ENTRYPOINT systemctl enable /data/mnt-storage.mount
+RUN cat /data/mnt-storage.mount
+
+#ENTRYPOINT systemctl enable /data/mnt-storage.mount
 
 CMD ["/bin/bash"]
 #CMD ["omv-initsystem"]
