@@ -22,5 +22,22 @@ RUN wget http://omv-extras.org/debian/pool/main/o/openmediavault-omvextrasorg/op
 RUN dpkg -i openmediavault-omvextrasorg_3.3.3_all.deb
 #RUN omv-initsystem
 
+ENV STORAGE_LABEL VTVINH
+ARG STORAGE_LABEL VTVINH
+
+RUN echo "[Unit]
+Description = External SD Card
+
+[Mount]
+What = LABEL=$STORAGE_LABEL
+Where = /mnt/storage/$STORAGE_LABEL
+Type = ext4
+Options = rw,relatime,data=ordered
+
+[Install]
+WantedBy = multi-user.target" > mnt-storage.mount
+
+RUN systemctl enable mnt-storage.mount
+
 CMD ["/bin/sh"]
 #CMD ["omv-initsystem"]
