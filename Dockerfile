@@ -22,8 +22,8 @@ RUN wget http://omv-extras.org/debian/pool/main/o/openmediavault-omvextrasorg/op
 RUN dpkg -i openmediavault-omvextrasorg_3.3.3_all.deb
 #RUN omv-initsystem
 
-ENV STORAGE_LABEL VTVINH
-ARG STORAGE_LABEL VTVINH
+ENV STORAGE_LABEL
+ARG STORAGE_LABEL=VTVINH
 
 RUN echo '[Unit] \n\
 Description = External SD Card \n\
