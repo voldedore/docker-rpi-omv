@@ -34,7 +34,19 @@ Type = ext4 \n\
 Options = rw,relatime,data=ordered \n\
 \n\
 [Install] \n\
-WantedBy = multi-user.target" > mnt-storage.mount
+WantedBy = multi-user.target' 
+
+RUN echo '[Unit] \n\
+Description = External SD Card \n\
+\n\
+[Mount] \n\
+What = LABEL=$STORAGE_LABEL \n\
+Where = /mnt/storage/$STORAGE_LABEL \n\
+Type = ext4 \n\
+Options = rw,relatime,data=ordered \n\
+\n\
+[Install] \n\
+WantedBy = multi-user.target' > mnt-storage.mount
 
 RUN systemctl enable mnt-storage.mount
 
