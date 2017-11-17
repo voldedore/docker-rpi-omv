@@ -43,12 +43,12 @@ then
 fi
 
 # Check if device is already mounted
-files=(/srv/dev-disk-by-label-$LABEL/*)
-if [ ${#files[@]} -gt 0 ]
-then
-  echo_mess "Device seems to be already mounted. Exiting..." 1
-  exit 2
-fi
+# files=(/srv/dev-disk-by-label-$LABEL/*)
+# if [ ${#files[@]} -gt 0 ]
+# then
+#   echo_mess "Device seems to be already mounted. Exiting..." 1
+#   exit 2
+# fi
 
 #echo "LABEL=$LABEL /mnt/storage/$LABEL $TYPE rw,relatime,discard,data=ordered 0 2" >> /etc/fstab
 echo "/dev/disk/by-label/$LABEL /srv/dev-disk-by-label-$LABEL $TYPE defaults,nofail 0 2" > /etc/fstab
