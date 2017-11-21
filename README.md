@@ -95,8 +95,23 @@ This image is designed and built to be used along with Resin.io
 7. In the meantime, you can burn the ResinOS downloaded from your application home directory to your microSD card. Finally put the card in your RPI and boot. You should see your RPi appearing in the Dashboard, logging like:
     ```
     21.11.17 15:42:52 (+0700) Downloading application 'registry2.resin.io/my-app/d8a7eb53c5a9affa39d334365d27b8102f8f1042'
+    21.11.17 15:48:16 (+0700) Downloaded application 'registry2.resin.io/my-app/d8a7eb53c5a9affa39d334365d27b8102f8f1042'
+    21.11.17 15:48:21 (+0700) Installing application 'registry2.resin.io/my-app/d8a7eb53c5a9affa39d334365d27b8102f8f1042'
+    21.11.17 15:48:22 (+0700) Installed application 'registry2.resin.io/my-app/d8a7eb53c5a9affa39d334365d27b8102f8f1042'
+    21.11.17 15:48:22 (+0700) Starting application 'registry2.resin.io/my-app/d8a7eb53c5a9affa39d334365d27b8102f8f1042'
+    21.11.17 15:48:23 (+0700) Started application 'registry2.resin.io/my-app/d8a7eb53c5a9affa39d334365d27b8102f8f1042'
+    21.11.17 15:48:23 (+0700) Systemd init system enabled.
+    21.11.17 15:48:24 (+0700) systemd 215 running in system mode. (+PAM +AUDIT +SELINUX +IMA +SYSVINIT +LIBCRYPTSETUP +GCRYPT +ACL +XZ -SECCOMP -APPARMOR)
+    21.11.17 15:48:24 (+0700) Detected virtualization 'other'.
+    21.11.17 15:48:24 (+0700) Detected architecture 'arm'.
+    21.11.17 15:48:24 (+0700) Set hostname to <raspberrypi3-f3112aa>.
+    21.11.17 15:48:24 (+0700) [159903.569953] quota-initial-check.sh[45]: Checking quotas...done.
     ```
+8. Access to OpenMediaVault via local ip shown in the Dashboard (or via public IP). Cheers! 🥂
     
+    Default ID `admin` and default password `openmediavault`
+    
+    
 ## Update installed application
 
 1. First, pull this repo to your cloned directory.
