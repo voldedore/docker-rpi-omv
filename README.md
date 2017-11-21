@@ -1,6 +1,6 @@
 # Raspberry Pi 3 - Dockerized OpenMediaVault - NAS it your self
 
-[![Build Status](https://travis-ci.org/voldedore/docker-rpi-omv-build.svg?branch=master)](https://travis-ci.org/voldedore/docker-rpi-omv-build)
+[![GitHub tag](https://img.shields.io/github/tag/voldedore/docker-rpi-omv-build.svg)](https://github.com/voldedore/docker-rpi-omv-build/releases) [![Build Status](https://travis-ci.org/voldedore/docker-rpi-omv-build.svg?branch=master)](https://travis-ci.org/voldedore/docker-rpi-omv-build) [![Docker Pulls](https://img.shields.io/docker/pulls/voldedore/rpi-omv.svg)](https://hub.docker.com/r/voldedore/rpi-omv/)
 
 *Used for running [built docker image](https://github.com/voldedore/docker-rpi-omv-build) via Resin.io*
 
