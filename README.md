@@ -2,6 +2,8 @@
 
 [![GitHub tag](https://img.shields.io/github/tag/voldedore/docker-rpi-omv-build.svg)](https://github.com/voldedore/docker-rpi-omv-build/releases) [![Build Status](https://travis-ci.org/voldedore/docker-rpi-omv-build.svg?branch=master)](https://travis-ci.org/voldedore/docker-rpi-omv-build) [![Docker Pulls](https://img.shields.io/docker/pulls/voldedore/rpi-omv.svg)](https://hub.docker.com/r/voldedore/rpi-omv/)
 
+*I recently stopped maintaining this repo due to a lack of time and RPI is not a proper idea for NAS, it's slow and the solution is somehow 'unstable'.*
+
 *Used for running [built docker image](https://github.com/voldedore/docker-rpi-omv-build) via Resin.io*
 
 Turn your Raspberry Pi to a NAS in 6 minutes*.
